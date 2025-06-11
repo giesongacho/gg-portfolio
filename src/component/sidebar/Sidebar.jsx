@@ -15,16 +15,16 @@ const Sidebar = () => {
         setIstoggle(!isToggle)
     }
   return (
-    <div className={`${isDarkMode ? "bg-slate-800" : "shadow-lg bg-slate-50"} w-[220px] h-screen absolute `}>
-        <div className=" h-[100px] flex justify-end items-center shadow-md">
-            <button className={`${isDarkMode ? 'text-white' : ''} w-[2rem] h-1/4 mr-5 rounded-md cursor-pointer`} onClick={()=> handleCloseSidebar()}><CloseOutlined /></button>
+    <div className={`${isDarkMode ? "bg-slate-800" : " bg-slate-50 "} w-[220px] h-screen fixed shadow-2xl z-40`}>
+        <div className=" h-[100px] flex justify-end items-center">
+            <button className={`${isDarkMode ? 'text-white hover:bg-slate-700' : 'hover:bg-slate-200'} w-[2rem] h-[2rem] mr-5 rounded-md cursor-pointer`} onClick={()=> handleCloseSidebar()}><CloseOutlined /></button>
         </div>
         <div className="mt-5 h-1/2">
                 <div className=" py-5">
                     {list.map((list) => (
-                        <div className={`m-2 ${isDarkMode ? 'bg-slate-200 hover:opacity-80' : 'shadow-lg hover:bg-slate-200'} flex py-2 pl-5 gap-x-2 rounded-md`}>
+                        <div className={`m-2 ${isDarkMode ? 'text-white hover:bg-slate-700' : ' hover:bg-slate-200'} flex py-2 pl-5 gap-x-2 rounded-md cursor-pointer `}>
                             <span>{list.icon}</span>
-                            <button className="text-[1.2 font-semibold rem] cursor-pointer shrink">{list.value}</button>
+                            <button className="text-[1.2 font-semibold rem] shrink">{list.value}</button>
                         </div>
                     ))}
                 </div>
