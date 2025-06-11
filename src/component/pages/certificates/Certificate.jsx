@@ -2,8 +2,8 @@ import React from 'react'
 
 const Certificate = () => {
   return (
-    <div>
-      Certificate
+    <div className='flex justify-center'>
+            <span className=''>This is the Certificate</span>
     </div>
   )
 }

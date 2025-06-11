@@ -2,8 +2,8 @@ import React from 'react'
 
 const Education = () => {
   return (
-    <div>
-      Education
+     <div className='flex justify-center'>
+            <span className=''>This is the Education</span>
     </div>
   )
 }

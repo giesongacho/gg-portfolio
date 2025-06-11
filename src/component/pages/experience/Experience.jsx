@@ -2,8 +2,8 @@ import React from 'react'
 
 const Experience = () => {
   return (
-    <div>
-      Experience
+    <div className='flex justify-center'>
+            <span className=''>This is the Experience</span>
     </div>
   )
 }

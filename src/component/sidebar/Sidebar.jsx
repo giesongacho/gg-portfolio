@@ -1,14 +1,16 @@
 import React,{useContext} from 'react'
 import { UserContext } from '../context/UserContextWrapper'
-import {CloseOutlined,ProjectOutlined,SafetyCertificateOutlined,ApartmentOutlined,SolutionOutlined,SubnodeOutlined} from '@ant-design/icons'
+import {CloseOutlined,ProjectOutlined,SafetyCertificateOutlined,ApartmentOutlined,SolutionOutlined,SubnodeOutlined,HomeOutlined} from '@ant-design/icons'
+import { Link } from 'react-router-dom'
 
 const Sidebar = () => {
     const list = [
-        {value: "Tech Stack", url : "", icon : <ApartmentOutlined />},
-        {value: "Experience", url : "", icon : <SubnodeOutlined />},
-        {value: "Education", url : "", icon : <SolutionOutlined />},
-        {value: "Certificate", url : "", icon : <SafetyCertificateOutlined />},
-        {value: "Projects", url : "", icon : <ProjectOutlined />}
+        {value: "Skills", url : "skills", icon : <ApartmentOutlined />},
+        {value: "Experience", url : "experience", icon : <SubnodeOutlined />},
+        {value: "Education", url : "education", icon : <SolutionOutlined />},
+        {value: "Certificate", url : "certificate", icon : <SafetyCertificateOutlined />},
+        // {value: "Projects", url : "", icon : <ProjectOutlined />},
+        {value: "Home", url : "", icon : <HomeOutlined />}
     ]
     const {isDarkMode,isToggle,setIstoggle} = useContext(UserContext)
     const handleCloseSidebar = () => {
@@ -21,10 +23,10 @@ const Sidebar = () => {
         </div>
         <div className="mt-5 h-1/2">
                 <div className=" py-5">
-                    {list.map((list) => (
-                        <div className={`m-2 ${isDarkMode ? 'text-white hover:bg-slate-700' : ' hover:bg-slate-200'} flex py-2 pl-5 gap-x-2 rounded-md cursor-pointer `}>
+                    {list.map((list,index) => (
+                        <div key={index} className={`m-2 ${isDarkMode ? 'text-white hover:bg-slate-700' : ' hover:bg-slate-200'} flex py-2 pl-5 gap-x-2 rounded-md cursor-pointer `}>
                             <span>{list.icon}</span>
-                            <button className="text-[1.2 font-semibold rem] shrink">{list.value}</button>
+                            <button className="text-[1.2 font-semibold rem] shrink"><Link to={list.url}>{list.value}</Link></button>
                         </div>
                     ))}
                 </div>
