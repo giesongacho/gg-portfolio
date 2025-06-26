@@ -206,7 +206,7 @@ const Hero = () => {
               <img alt="profile" src={ProfilePic} className=' h-[full] w-[20rem] bg-yellow-300 m-5 rounded-[50%] ring ring-4 ring-slate-300 ring-offset-2 '></img>
 
               </div>
-                <span className='h-[10rem] w-[20rem] rounded-md font-semibold text-2xl text-center'>Hello, Im Gacho i'm a Frontend web developer</span>
+                <span className='h-[10rem] w-[20rem] rounded-md font-semibold text-2xl text-center'>Hello, Im Gieson Gacho i'm a Frontend web developer</span>
               <div className=''>     
           </div>
           
