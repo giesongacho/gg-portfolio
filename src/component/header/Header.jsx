@@ -12,7 +12,7 @@ const Header = () => {
     setIsDarkMode(!isDarkMode)
    },[isDarkMode,setIsDarkMode])
   return (
-    <div className={`h-[10vh] ${!isDarkMode ? 'shadow-xl' : 'bg-slate-800 text-white shadow-xl'} flex justify-between items-center px-5 fixed top-0 w-full z-30`}>
+    <div className={`h-[10vh] ${!isDarkMode ? 'shadow-xl bg-white' : 'bg-slate-800 text-white shadow-xl'} flex justify-between items-center px-5 fixed top-0 w-full z-30`}>
         <button className='text-2xl cursor-pointer' onClick={()=>handleToggle()}>
             <AlignLeftOutlined />
         </button>

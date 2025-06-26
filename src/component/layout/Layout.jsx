@@ -9,10 +9,12 @@ import TechStack from '../pages/stack/TechStack'
 import Experience from '../pages/experience/Experience'
 import Education from '../pages/education/Education'
 import Certificate from '../pages/certificates/Certificate'
+import Footers from './../footer/Footers'
+// const Education  = lazy(() => import('../pages/education/Education'))
 const Layout = () => {
-const {isToggle} = useContext(UserContext)
+const {isToggle,isDarkMode} = useContext(UserContext)
   return (
-    <div className='h-screen bg-slate-50'>
+    <div className={`h-screen ${isDarkMode ? 'bg-slate-800' : 'bg-slate-100'}`}>
         <Header />
         {isToggle &&  <Sidebar />}
         
@@ -26,6 +28,7 @@ const {isToggle} = useContext(UserContext)
               {/* <Route path="experience" element={<Proje />}/> */}
           </Route>
         </Routes>
+      
     </div>
   )
 }
