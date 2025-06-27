@@ -1,6 +1,6 @@
 import React, {useContext,useState} from 'react'
 import ProfilePic from '../../../assets/profile.jpg'
-import { Divider,Timeline  } from 'antd';
+import { Divider,Timeline,Collapse   } from 'antd';
 import { UserContext } from '../../context/UserContextWrapper';
 import Footers from '../../footer/Footers';
 
@@ -18,6 +18,7 @@ const Experience = () => {
     </>
   )
 }
+
 const TechCard = ({icon,name,description}) => {
 
   const {isDarkMode} = useContext(UserContext);
@@ -31,7 +32,7 @@ const TechCard = ({icon,name,description}) => {
           <span className='font-semibold'>{name}</span>
          </div>
 
-         <div className='w-full h-full overflow-y-scroll py-2'>
+         <div className='w-full h-full overflow-y-auto py-2'>
           <h2 className='text-xl font-semibold'>Use Cases:</h2>
           <span className='whitespace-normal break-words '>
             {description}
@@ -87,27 +88,63 @@ const WorkExperience = () => {
 
   const items = [
     {
-      label: <span className={`text-2xl ${isDarkMode ? 'text-white' : ''}`} >2015-09-01</span>,
-      children: <span className={`text-2xl ${isDarkMode ? 'text-white' : ''}`} >Mang Inasal</span>,
+      key:"1",
+      label: <div className={` ${isDarkMode ? 'text-white' : ''} flex justify-between`} >
+        <span className='font-bold text-xl'>Mang Inasal</span>
+        <span className='font-semibold'>2013-2014</span>
+      </div>,
+      children: <div className={`${isDarkMode ? 'text-white' : ''} `}>
+        <div><span className="font-semibold">Position</span>: Service Crew</div>
+        <p>My job is to cook the chicken, and I've been here for 6 months because i continue my study and enroll as another course in the university.</p>
+      </div>,
     },
     {
-      label: <span className={`text-2xl ${isDarkMode ? 'text-white' : ''}`} >2015-09-01</span>,
-      children: <span className={`text-2xl ${isDarkMode ? 'text-white' : ''}`} >Mondi Nissin</span>,
+      key:"2",
+      label: <div className={`${isDarkMode ? 'text-white' : ''} flex justify-between`} >
+        <span className='font-bold text-xl'>Monde Nissin</span>
+        <span className='font-semibold'>2016-2017</span>
+      </div>,
+      children: <div className={` ${isDarkMode ? 'text-white' : ''}`} >
+         <span><b>Position</b>: Production Operator</span>
+         <p>My job here is to load the dough of egg-nog biscuit into the machine, and I've been here for 6 months because my work contract is only for 6 months.</p>
+      </div>,
     },
     {
-      label: <span className={`text-2xl  ${isDarkMode ? 'text-white' : ''}`} >2015-09-01</span>,
-      children: <span className={`text-2xl  ${isDarkMode ? 'text-white' : ''}`} >Onsemiconductor</span>,
+      key:"3",
+      label: <div className={` ${isDarkMode ? 'text-white' : ''} flex justify-between`} >
+        <span className='font-bold text-xl'>Onsemiconductor</span>
+        <span className='font-semibold'>2018-2023</span>
+      </div>,
+      children: <div className={` ${isDarkMode ? 'text-white' : ''}`} >
+        <span><b>Position</b>: Production Operator</span>
+        <p>My job here to assist the machine that will attache the wire into the electronic component, and sometimes repairing the machine if there is a problem, this is not part of my job but i want to help the other technician to reduce the downtime to that machine.</p>
+      </div>,
     },
     {
-      label: <span className={`text-2xl ${isDarkMode ? 'text-white' : ''}`} >2015-09-01</span>,
-      children: <span className={` text-2xl ${isDarkMode ? 'text-white' : ''}`} >TelproPh</span>,
+      key: "4",
+      label: <div className={` ${isDarkMode ? 'text-white' : ''} flex justify-between`} >
+        <span className='font-bold text-xl'>TelproPh</span>
+         <span className='font-semibold'>2023 - (Present)</span>
+      </div>,
+      children: <div className={` ${isDarkMode ? 'text-white' : ''}`} >
+        <span><b>Position</b> : Frontend Web Developer</span>
+        <p>My job here to create a UI using Reactjs and Javascript, until i learned how to create API and Backend using Nodejs,Expressjs with sequilize ORM if using mysql/postgre, and i learned how to create Authorization and Authentication on Nodejs and also basic knowledge for Deploment with VPS.</p>
+      </div>,
     },
      
   ]
 
   return (
     <div>
-      <Timeline mode="left" items={items}/>
+      <h2 className='font-bold text-2xl m-2 pl-2 pb-2'>Work Experience</h2>
+      <Collapse items={items} bordered={false} ghost={true} defaultActiveKey={['1']} />
+    </div>
+  )
+}
+const ExperienceDescription = () => {
+  return (
+    <div>
+
     </div>
   )
 }
@@ -181,22 +218,22 @@ const Hero = () => {
     {
       icon: <SiPostman />,
       name: "Postman",
-      description: ""
+      description: "Test, develop, and document APIs; automate testing, monitor performance, and collaborate on API projects."
     },
     {
       icon: <FaGithub />,
       name: "Github",
-      description: ""
+      description: "Host code repositories, enable team collaboration, automate CI/CD, manage projects, and support open-source contributions."
     },
     {
       icon: <FaGit />,
       name: "git",
-      description: ""
+      description: "Track code changes, manage branches, enable collaboration, and support version control for development."
     },
     {
       icon: <TbApi />,
       name: "Rest API",
-      description: ""
+      description: "Facilitate client-server communication, power web/mobile apps, support microservices, enable integrations, and automate tasks via HTTP."
     },
    ])
   return (
@@ -215,9 +252,9 @@ const Hero = () => {
         <TechStack tech={tech}/>
         <TechTools tools={tools}/>
         <WorkExperience />
-       {/* <div className='h-[10vh] '>
+       <div className='h-[20vh] mt-5'>
         <Footers />
-      </div> */}
+      </div>
      </div>
   )
 }

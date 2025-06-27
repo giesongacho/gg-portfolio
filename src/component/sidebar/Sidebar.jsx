@@ -1,18 +1,17 @@
 import React,{useContext} from 'react';
 import {useState} from 'react';
 import { UserContext } from '../context/UserContextWrapper';
-import {CloseOutlined,ProjectOutlined,SafetyCertificateOutlined,ApartmentOutlined,SolutionOutlined,SubnodeOutlined,HomeOutlined,LeftOutlined,RightOutlined} from '@ant-design/icons';
+import {CloseOutlined,SafetyCertificateOutlined,SolutionOutlined,HomeOutlined,LeftOutlined,RightOutlined} from '@ant-design/icons';
 import {Tooltip } from 'antd';
 import { Link } from 'react-router-dom';
 
 const Sidebar = () => {
     const list = [
-        {value: "Skills", url : "skills", icon : <ApartmentOutlined />},
-        {value: "Experience", url : "experience", icon : <SubnodeOutlined />},
+         {value: "Home", url : "/", icon : <HomeOutlined />},
         {value: "Education", url : "education", icon : <SolutionOutlined />},
         {value: "Certificate", url : "certificate", icon : <SafetyCertificateOutlined />},
         // {value: "Projects", url : "", icon : <ProjectOutlined />},
-        {value: "Home", url : "/", icon : <HomeOutlined />}
+       
     ]
     const {isDarkMode,isToggle,setIstoggle} = useContext(UserContext)
     const [minimize,setMinimize] = useState(false)

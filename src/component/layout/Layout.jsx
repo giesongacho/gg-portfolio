@@ -21,8 +21,8 @@ const {isToggle,isDarkMode} = useContext(UserContext)
         <Routes>
           <Route path="/" element={<Content />}>
               <Route index element={<Hero />}/>
-              <Route path="skills" element={<TechStack />}/>
-              <Route path="experience" element={<Experience />}/>
+              {/* <Route path="skills" element={<TechStack />}/>
+              <Route path="experience" element={<Experience />}/> */}
               <Route path="education" element={<Education />}/>
               <Route path="certificate" element={<Certificate />}/>
               {/* <Route path="experience" element={<Proje />}/> */}
